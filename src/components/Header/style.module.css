@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    align-items: center;
+    background-color: #8a2b0e;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header a.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+header nav {
+    display: flex;
+    gap: 15px;
+    color: white;
+}
+
+a {
+    cursor: pointer;
+}
