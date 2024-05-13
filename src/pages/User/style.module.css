@@ -1,0 +1,33 @@
+.user_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 60%;
+    height: 60px;
+    border: 1px solid rgb(165, 5, 5);
+    border-bottom-width:5px ;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: white;
+}
+.user_row h6{
+    border: 1px solid rgb(165, 5, 5);
+    padding: 5px;
+    border-radius: 5px;
+    border-width: 2px;
+}
+.user_row p{
+    font-size: 13px;
+}
+
+.user_row .icon {
+    cursor: pointer;
+   text-align: center;
+   margin-top: 10px;
+}
+
+.user_row svg {
+    height: 25px;
+    color: rgb(165, 5, 5);
+}

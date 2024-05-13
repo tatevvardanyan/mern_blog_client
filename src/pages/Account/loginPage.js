@@ -1,13 +1,14 @@
 import { useContext, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
-import { UserContext } from "../UserContext";
+import { UserContext } from "../../UserContext";
+import style from "./style.module.css"
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [redirect, setRedirect] = useState(false);
-    const { userInfo, setUserInfo } = useContext(UserContext);
-    
+    const { setUserInfo } = useContext(UserContext);
+
     const handelLogin = async (event) => {
         event.preventDefault();
         const response = await fetch('http://localhost:4000/login', {
@@ -31,20 +32,22 @@ const LoginPage = () => {
         return <Navigate to={"/"} />
     }
     return (
-        <form className="login" onSubmit={handelLogin}>
+        <form className={style.login} onSubmit={handelLogin}>
             <h1>Login</h1>
             <input
+                required
                 type="text"
                 placeholder="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)} />
             <input
+                required
                 type="password"
                 placeholder="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)} />
             <button>Login</button>
-            <Link to='/register' className="toreg">Register</Link>
+            <Link to='/register' className={style.toreg}>Register</Link>
         </form>
     )
 }

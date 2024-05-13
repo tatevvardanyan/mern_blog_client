@@ -1,8 +1,24 @@
+import paraqar_arm from "../../icon/paraqar_arm.png";
+import style from "./style.module.css";
+
 const About = () => {
     return (
-        <div>
-            <h1>About Us</h1>
-            <p></p>
+        <div className={style.info}>
+            <img src={paraqar_arm} alt="paraqar.news" />
+            <div className={style.text}>
+                <h1>Մեր մասին</h1>
+                <p><b>Paraqar.news</b> կայքը ստեղծվել է ` Հայոց պատմություն առարկայի նախագծային աշխատանքի շրջանակներում,
+                    նպատակն է ներկայացնել Փարաքար բնակավայրի հիմնադրման պատմությունը:
+                </p>
+                <p>
+                    Կայքը ստեղծվելէ՝ 12․05․2024թ․
+                </p>
+                <ul>
+                    <li><b>Ուսուցչուհի՝</b>  Լիլիթ Հարությունյան,</li>
+                    <li><b>Դասարան՝</b>  7ա,</li>
+                    <li><b>Կայքի ստեղծող՝</b>  Տաթևիկ Վարդանյան:</li>
+                </ul>
+            </div>
         </div>
 
     )

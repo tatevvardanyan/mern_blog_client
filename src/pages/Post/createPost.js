@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import Editor from '../Editor';
 import 'react-quill/dist/quill.snow.css';
+import { useContext, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { UserContext } from '../../UserContext';
+import Editor from '../../Editor';
+import style from "./style.module.css"
 
 const CreatePost = () => {
     const [title, setTitle] = useState('');
@@ -9,6 +11,7 @@ const CreatePost = () => {
     const [files, setFiles] = useState();;
     const [content, setContent] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const { userInfo } = useContext(UserContext);
 
     const handleCreate = async (event) => {
         event.preventDefault();
@@ -35,12 +38,13 @@ const CreatePost = () => {
 
         }
 
-    }
-    if (redirect) {
+    };
+
+    if (redirect || !userInfo?.isAuth) {
         return <Navigate to={'/'} />
     }
     return (
-        <form onSubmit={handleCreate}>
+        <form onSubmit={handleCreate} className={style.form}>
             <input
                 type="title"
                 placeholder="Title"

@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import Editor from '../Editor';
+import Editor from '../../Editor';
+import style from "./style.module.css"
+import { UserContext } from '../../UserContext';
+
+
 const EditPost = () => {
     const { id } = useParams()
     const [title, setTitle] = useState('');
     const [summery, setSummery] = useState('');
     const [content, setContent] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const { userInfo } = useContext(UserContext);
 
     useEffect(() => {
         fetch(`http://localhost:4000/posts/${id}`)
@@ -17,7 +22,7 @@ const EditPost = () => {
                     setSummery(postInfo.summery)
                 })
             })
-    }, [])
+    }, [id]);
 
     const handleUpdate = async (event) => {
         event.preventDefault();
@@ -39,12 +44,13 @@ const EditPost = () => {
             alert("failed to edit post")
         }
 
-    }
-    if (redirect) {
+    };
+
+    if (redirect || !userInfo?.isAuth) {
         return <Navigate to={`/post/${id}`} />
     }
     return (
-        <form onSubmit={handleUpdate}>
+        <form onSubmit={handleUpdate} className={style.form}>
             <input
                 type="title"
                 placeholder="Title"

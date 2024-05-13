@@ -11,13 +11,13 @@ const Post = ({ _id, title, summery, cover, createdAt, author }) => {
                 </Link>
             </div>
             <div className={style.texts}>
-                <Link to={'/post/id'}>
+                <Link to={`/post/${_id}`}>
                     <h2>{title}</h2>
                 </Link>
-                <p className={style.info}>
-                    <a className={style.author}>{author.username}</a>
+                <span className={style.info}>
                     <time>{formatISO9075(new Date(createdAt), 'MMM d, yyyy HH:mm')}</time>
-                </p>
+                    <p className={style.author}>{author.username}</p>
+                </span>
                 <p className={style.summary}>{summery}</p>
             </div>
         </div>
