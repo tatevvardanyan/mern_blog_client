@@ -32,7 +32,7 @@ const PostPage = () => {
     if (!postInfo) return ''
     return (
         <div className={style.post_page}>
-            <h1>{postInfo.title}</h1>
+            <h2>{postInfo.title}</h2>
             <time>{formatISO9075(new Date(postInfo.createdAt), 'MMM d, yyyy HH:mm')}</time>
             <div className={style.author}>by {postInfo.author.username}</div>
             {userInfo.id === postInfo.author._id && (

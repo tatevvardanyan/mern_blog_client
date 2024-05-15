@@ -1,9 +1,10 @@
-.post_page{
+.post_page {
     background-color: white;
     border-radius: 20px;
 }
+
 .post_page .image {
-    max-height: 250px;
+    max-height: 300px;
     display: flex;
     overflow: hidden;
 }
@@ -19,7 +20,7 @@
     text-decoration: underline;
 }
 
-.post_page h1 {
+.post_page h2 {
     text-align: center;
     margin: 10px 0 10px;
 }
@@ -63,7 +64,8 @@
     border-radius: 5px;
     font-size: .8rem;
 }
-.edit_row .edit_btn_btn{
+
+.edit_row .edit_btn_btn {
     width: 20%;
     background-color: rgb(165, 5, 5);
     color: #fff;

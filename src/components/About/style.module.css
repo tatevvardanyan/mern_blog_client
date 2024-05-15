@@ -16,7 +16,9 @@
 .text p b {
     color: rgb(165, 5, 5)
 }
-
+.text ol{
+    list-style:circle;
+}
 .info img {
     max-height: 100%;
 }
