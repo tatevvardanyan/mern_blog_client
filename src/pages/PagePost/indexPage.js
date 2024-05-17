@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "../../components/Post";
+import style from "./style.module.css"
 
 const IndexPage = () => {
     const [posts, setPosts] = useState([]);
@@ -23,6 +24,7 @@ const IndexPage = () => {
     if (posts.length === 0) return 'Ուպս այստեղ դեռ նորություններ չկան։Նորություններ ավելացնելու համար նախ պետք է գրանցվել🙂։'
     return (
         <div>
+            <p className={style.pp}><b>Փարաքարը որպես հնագիտական ֆենոմեն</b></p>
             {posts.length > 0 && posts?.map((post, index) => {
                 return <Post {...post} key={index} />
             })}
